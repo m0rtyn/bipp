@@ -26,10 +26,6 @@
 		"Segoe UI Symbol";
 }
 
-body {
-	margin: 0;
-}
-
 img {
 	display: block;
 	height: auto;
@@ -475,7 +471,7 @@ form > footer > * {
 textarea {
 	min-height: 10rem;
 	min-width: 10rem;
-	max-width: calc(100vw - 4rem);
+	max-width: min(calc(100vw - 4rem), 56rem);
 	max-height: 30rem;
 }
 
