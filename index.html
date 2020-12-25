@@ -1,302 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Bipp — the canned glitter for your HTML.</title>
+		<link rel="stylesheet" href="bipp.css">
+		<script src="https://cdn.jsdelivr.net/gh/mvoloskov/butter/dist/butter.min.js"></script>
+		<script>
+			butter()
+		</script>
+	</head>
+	<body>
+		<header>
+			<h1>
+				There is no need to be upset.
+			</h1>
+			<p>
+				The canned glitter for your HTML.
+			</p>
+			<p>
+				This is a test page filled with common HTML elements to be used to provide visual feedback whilst building CSS systems and frameworks.
+			</p>
+		</header>
+		<main>
+			<h2>Text</h2>
+			<h1>Heading 1</h1>
+			<h2>Heading 2</h2>
+			<h3>Heading 3</h3>
+			<p>
+				A paragraph (from the Greek paragraphos, “to write beside” or “written beside”) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.
+			</p>
+			<p>
+				A paragraph (from the Greek paragraphos, “to write beside” or “written beside”) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.
+			</p>
+			<p>
+				A paragraph (from the Greek paragraphos, “to write beside” or “written beside”) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.
+			</p>
+			<blockquote>
+				See, you not only have to be a good coder to create a system like Linux, you have to be a sneaky bastard too.
+				<cite>
+					Linus Torvalds
+				</cite>
+			</blockquote>
+			<h2>Navigation</h2>
+			<nav>
+				<ul>
+					<li>
+						<a href="#">Any</a>
+					</li>
+					<li>
+						<a href="#">nav with ul</a>
+					</li>
+					<li>
+						<a href="#">becomes a menu</a>
+					</li>
+				</ul>
+			</nav>
+			<h2>Buttons</h2>
+			<style>
+				.grid {
+					display: flex;
+					flex-wrap: wrap;
+					margin: -.5rem;
+				}
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bipp – the canned glitter for your HTML</title>
-  <link rel="stylesheet" href="bipp.css">
-</head>
-
-<body>
-  <header>
-    <h1>Bipp</h1>
-    <p>The canned glitter for your HTML.</p>
-  </header>
-  <main>
-    <article>
-      <section>
-        <h2>
-          <a id="wtf" href="#wtf" aria-hidden="true"></a>What is it?
-        </h2>
-        <p>awsm.css is a
-          <abbr title="Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language.">CSS</abbr>
-          library for beautify
-          <a href="http://www.w3schools.com/html/html5_semantic_elements.asp" title="HTML5 Semantic Elements" target="_blank">semantic</a>
-          <abbr title="HyperText Markup Language is the standard markup language for creating web pages and web applications.">HTML</abbr>
-          markup without classes, attributes, etc. Use tags only.
-        </p>
-        <p>The library is the best choice for a blog, your homepage or a site about a project.</p>
-      </section>
-      <section>
-        <h2>
-          <a id="usage" href="#usage" aria-hidden="true"></a>Usage</h2>
-        <pre><code>&lt;link rel="stylesheet" href="awsm.min.css"&gt;</code></pre>
-        <p>Also don't forget to add viewport info to
-          <code>&lt;head&gt;</code>
-          section for adaptation to mobile. Like this:
-        </p>
-        <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
-        <p>It's also available as the
-          <a href="https://www.npmjs.com/package/awsm.css" title="awsm.css in npm registry" target="_blank">npm package</a>, which supports
-          <a href="download.html#postcss" title="Example of usage as PostCSS plugin">PostCSS API</a>.
-        </p>
-      </section>
-      <section>
-        <h2>
-          <a id="why" href="#why" aria-hidden="true"></a>Why?
-        </h2>
-        <p>I had to create simple pages in my daily work. Sometimes it was compiled Markdown, sometimes pure
-          <abbr title="HyperText Markup Language is the standard markup language for creating web pages and web applications.">HTML</abbr>. I'd like to make them more beautiful without additional classes, ids, etc. So I did it.
-        </p>
-      </section>
-    </article>
-    <article>
-      <h2>Elements</h2>
-      <p>There are demos of library capabilities. From skeleton to media.</p>
-      <p>If these're not enough take a look more
-        <a href="#moar">at the end of the page</a>.
-      </p>
-      <section>
-        <h2>
-          <a id="contents" href="#contents" aria-hidden="true"></a>Contents
-        </h2>
-        <nav>
-          <ul>
-            <li>
-              <a href="#main">Main</a>
-            </li>
-            <li>
-              <a href="#lists">Lists</a>
-            </li>
-            <li>
-              <a href="#tables">Tables</a>
-            </li>
-            <li>
-              <a href="#inlines">Inlines</a>
-            </li>
-            <li>
-              <a href="#media">Media</a>
-            </li>
-            <li>
-              <a href="#forms">Forms</a>
-            </li>
-            <li>
-              <a href="#code">Code</a>
-            </li>
-            <li>
-              <a href="#misc">Misc.</a>
-            </li>
-            <li>
-              <a href="#moar">MOAR!</a>
-            </li>
-          </ul>
-        </nav>
-      </section>
-      <section>
-        <h2>
-          <a id="main" href="#main" aria-hidden="true"></a>Main
-        </h2>
-        <p>awsm.css contains styles for all really useful
-          <abbr title="HyperText Markup Language is the standard markup language for creating web pages and web applications.">HTML5</abbr>
-          skeleton tags. If you open the source code of this page you'll see all of them.
-        </p>
-        <section>
-          <h3>
-            <a id="others" href="#others" aria-hidden="true"></a>What about others?
-          </h3>
-          <figure><img src="https://picsum.photos/300/300" alt="Kitty">
-            <figcaption>
-              <code>figure</code>
-              caption
-            </figcaption>
-          </figure>
-          <p>
-            <code>div</code>
-            isn't styled because it doesn't have semantic value (as well as
-            <code>span</code>
-            elements which aren't styled either).
-          </p>
-          <aside>
-            <p>
-              <strong>N.B.</strong>
-              <a href="http://html5doctor.com/cite-and-blockquote-reloaded/" title="An article on html5doctor.com explains the right way of using quotes in HTML5" target="_blank">cite and blockquote – reloaded</a>
-            </p>
-          </aside>
-          <p>But for example quotes are really nice:</p>
-          <blockquote>
-            <p>See, you not only have to be a good coder to create a system like Linux, you have to be a sneaky bastard too.</p>
-            <footer>—
-              <cite>Linus Torvalds</cite>
-            </footer>
-          </blockquote>
-          <p>Yeah! They almost have no custom styles :)</p>
-        </section>
-      </section>
-      <section>
-        <h2>
-          <a id="lists" href="#lists" aria-hidden="true"></a>Lists
-        </h2>
-        <p>There's boring unordered list of jedi masters:</p>
-        <ul>
-          <li>Obi-Wan Kenobi</li>
-          <li>Luke Skywalker</li>
-          <li>Yoda</li>
-        </ul>
-        <p>Let's rank them!</p>
-        <ol>
-          <li>Luke Skywalker</li>
-          <li>Yoda</li>
-          <li>Obi-Wan Kenobi</li>
-        </ol>
-        <p>And we also have description lists:</p>
-        <dl>
-          <dt>Blizzard</dt>
-          <dd>A howling blizzard is summoned to strike the opposing team. It may also freeze them solid.</dd>
-          <dt>Hidden Power</dt>
-          <dd>A unique attack that varies in type depending on the Pokémon using it.</dd>
-          <dt>Waterfall</dt>
-          <dd>The user charges at the target and may make it flinch. It can also be used to climb a waterfall.</dd>
-        </dl>
-      </section>
-      <section>
-        <h2>
-          <a id="tables" href="#tables" aria-hidden="true"></a>Tables
-        </h2>
-        <p>Let's look at Apple, Microsoft & Google:</p>
-        <table>
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Revenue</th>
-              <th>Number of employees</th>
-              <th>CEO</th>
-              <th>Founders</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Apple</td>
-              <td>US$ 215.639 billion</td>
-              <td>115,000</td>
-              <td>Tim Cook</td>
-              <td>Steve Jobs, Steve Wozniak, Ronald Wayne</td>
-            </tr>
-            <tr>
-              <td>Microsoft</td>
-              <td>US$ 85.32 billion</td>
-              <td>114,000</td>
-              <td>Satya Nadella</td>
-              <td>Bill Gates, Paul Allen</td>
-            </tr>
-            <tr>
-              <td>Google</td>
-              <td>US$ 74.54 billion</td>
-              <td>57,100</td>
-              <td>Sundar Pichai</td>
-              <td>Larry Page, Sergey Brin</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colspan="5">Total revenue: US$ 375.499 billion</td>
-            </tr>
-          </tfoot>
-        </table>
-        <p>This table looks fine on mobile. Resize browser window and check this out!</p>
-      </section>
-      <section>
-        <h2>
-          <a id="inlines" href="#inlines" aria-hidden="true"></a>Inlines
-        </h2>
-        <p><img src="https://picsum.photos/400/400" alt="Surprised cat">The library has styles for
-          <strong>strong</strong>,
-          <em>emphasized</em>
-          text and so on.
-        </p>
-        <p>Please note if you insert image inside
-          <code>p</code>
-          it'll be aligned to the right side. But if you insert image outside
-          <code>p</code>
-          it'll be aligned to the center. See example below.
-        </p>
-        <hr>
-        <p>There are many others stylized inline tags in lib, but it would be boring to list them all.</p><img src="https://picsum.photos/400/800" alt="Sleepy cat">
-      </section>
-      <section>
-        <h2>
-          <a id="media" href="#media" aria-hidden="true"></a>Media
-        </h2>
-        <p>View of audio and video depends on your browser.</p>
-        <aside>
-          <p>This is a background theme of
-            <a href="https://radio-t.com" title="The famous Russian IT-podcast" target="_blank">Radio-T</a>.
-          </p>
-        </aside>
-        <audio src="http://igoradamenko.com/github/awsm.css/radio-t.mp3" controls="controls" loop="loop">It seems like your browser can't play this audio.</audio>
-        <video src="http://igoradamenko.com/github/awsm.css/cats.mp4" controls="controls">It seems like your browser can't play this video.</video>
-      </section>
-      <section>
-        <h2>
-          <a id="forms" href="#forms" aria-hidden="true"></a>Forms
-        </h2>
-        <form>
-          <h4>Mars vacation program</h4>
-          <fieldset>
-            <legend>Be first</legend>
-            <label for="full-name">Full Name</label>
-            <input id="full-name" type="text" value="Elon Reeve Musk">
-            <p>Sex<br>
-              <label>
-                <input type="radio" name="sex" checked="checked">Male
-              </label>
-              <label>
-                <input type="radio" name="sex">Female
-              </label>
-            </p>
-            <label for="date">Date of birth</label>
-            <input id="date" type="date" value="1971-06-28">
-            <label for="email">E-mail</label>
-            <input id="email" type="email" value="elon.musk@spacex.com">
-            <label for="phone">Phone number</label>
-            <input id="phone" type="tel" placeholder="Numbers only, please">
-            <label for="country">Country</label>
-            <select id="country">
-              <option value="china">China</option>
-              <option value="russia">Russia</option>
-              <option value="usa" selected="selected">USA</option>
-            </select>
-            <label for="about">Tell us about yourself</label>
-            <textarea id="about"></textarea>
-            <label for="photo">Photo</label>
-            <input id="photo" type="file">
-            <label for="eyes-color">Eyes color
-              <small>(just kidding)</small>
-            </label>
-            <input id="eyes-color" type="color">
-            <label for="password">Password</label>
-            <input id="password" type="password" placeholder="Use strong password!">
-            <label>
-              <input type="checkbox" checked="checked">I pass my soul to SpaceX.
-            </label><br>
-            <input type="submit" value="Submit">
-            <button type="reset">Reset</button>
-          </fieldset>
-        </form>
-      </section>
-      <section>
-        <h2>
-          <a id="misc" href="#misc" aria-hidden="true"></a>Misc.
-        </h2>
-        <details>
-          <summary>Show me the magic</summary>
-          <p>This simple spoiler doesn't work in Internet Explorer / Edge yet. Coming soon :)</p>
-      </section>
-    </article>
-  </main>
-  <footer>
-    <p>Test page by Igor Adamenko</p>
-  </footer>
-</body>
-
+				.grid > * {
+					margin: .5rem;
+				}
+			</style>
+			<div class="grid">
+				<button type="button">
+					Button
+				</button>
+				<button type="submit">
+					Submit
+				</button>
+				<button type="reset">
+					Reset
+				</button>
+				<button aria-busy="true" tabindex="-1">
+					Button
+				</button>
+				<button type="button" disabled>
+					Disabled
+				</button>
+			</div>
+			<h2>Lists</h3>
+			<ol>
+				<li>List Item 1</li>
+				<li>List Item 2</li>
+				<li>List Item 3</li>
+				<li>
+					See a list of questions in the training courses. There are definitely some impressive ideas for future research. Be interested not in what you have already learned, but in what you have not yet dealt with.
+				</li>
+				<li>
+					Read textbooks and magazines in your discipline. You just need to find a clue that will encourage the development of your idea.
+				</li>
+				<li>
+					See a list of questions in the training courses. There are definitely some impressive ideas for future research.
+				</li>
+			</ol>
+			<ul>
+				<li>List Item 1</li>
+				<li>List Item 2</li>
+				<li>List Item 3</li>
+				<li>
+					See a list of questions in the training courses. There are definitely some impressive ideas for future research. Be interested not in what you have already learned, but in what you have not yet dealt with.
+				</li>
+				<li>
+					Read textbooks and magazines in your discipline. You just need to find a clue that will encourage the development of your idea.
+				</li>
+				<li>
+					See a list of questions in the training courses. There are definitely some impressive ideas for future research.
+				</li>
+			</ul>
+			<h2>Tables</h2>
+			<table>
+				<caption>Table of 2 columns</caption>
+				<thead>
+					<tr>
+						<th>Table Heading 1</th>
+						<th>Table Heading 2</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Table Cell 1</td>
+						<td>Table Cell 2</td>
+					</tr>
+					<tr>
+						<td>Table Cell 1</td>
+						<td>Table Cell 2</td>
+					</tr>
+					<tr>
+						<td>Table Cell 1</td>
+						<td>Table Cell 2</td>
+					</tr>
+					<tr>
+						<td>Table Cell 1</td>
+						<td>Table Cell 2</td>
+					</tr>
+				</tbody>
+			</table>
+			<table>
+				<caption>Table of 5 columns</caption>
+				<thead>
+					<tr>
+						<th>Table Heading 1</th>
+						<th>Table Heading 2</th>
+						<th>Table Heading 3</th>
+						<th>Table Heading 4</th>
+						<th>Table Heading 5</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Table Cell 1</td>
+						<td>Table Cell 2</td>
+						<td>Table Cell 3</td>
+						<td>Table Cell 4</td>
+						<td>Table Cell 5</td>
+					</tr>
+					<tr>
+						<td>Table Cell 1</td>
+						<td>Table Cell 2</td>
+						<td>Table Cell 3</td>
+						<td>Table Cell 4</td>
+						<td>Table Cell 5</td>
+					</tr>
+					<tr>
+						<td>Table Cell 1</td>
+						<td>Table Cell 2</td>
+						<td>Table Cell 3</td>
+						<td>Table Cell 4</td>
+						<td>Table Cell 5</td>
+					</tr>
+					<tr>
+						<td>Table Cell 1</td>
+						<td>Table Cell 2</td>
+						<td>Table Cell 3</td>
+						<td>Table Cell 4</td>
+						<td>Table Cell 5</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2>Code</h2>
+			<code>function checkParent (src, dest) {
+	while (src != null) {
+		if (src.tagName == dest) return src
+		src = src.parentElement
+	}
+	return null
+}</code>
+			<p>
+				This is a paragraph with <code>inline code</code>. Some more text and a really long inline code: <code>This is a really long text link. A paragraph (from the Greek paragraphos, “to write beside” or “written beside”) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose</code>.
+			</p>
+			<h2>Inline elements</h2>
+			<p>
+				<a href="#">
+					This is a really long text link. A paragraph (from the Greek paragraphos, “to write beside” or “written beside”) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose
+				</a>.
+			</p>
+			<p>
+				<a href="#">This is a text link</a>.
+			</p>
+			<p>
+				<a href="https://miloslav.website">External link</a>.
+			</p>
+			<p>
+				<strong>Strong is used to indicate strong importance.</strong>
+			</p>
+			<p>
+				<em>This text has added emphasis.</em>
+			</p>
+			<p>
+				The <b>b element</b> is stylistically different text from normal text, without any specialimportance.
+			</p>
+			<p>
+				<del>This text is deleted.</del>
+			</p>
+			<h2>Images</h2>
+			<img src="https://source.unsplash.com/480x480" width="480" height="480" alt="Generic image example">
+			<figure>
+				<img src="https://source.unsplash.com/900x480" width="900" height="480" alt="Generic image example">
+				<figcaption>Generic Figure Caption</figcaption>
+			</figure>
+			<h2>Forms</h2>
+			<form>
+				<label>
+					Full Name<br>
+					<input type="text" placeholder="John Doe">
+				</label>
+				<fieldset>
+					<legend>Gender</legend>
+					<label>
+						<input type="radio" name="gender" value="male" checked>
+						Male
+					</label>
+					<label>
+						<input type="radio" name="gender" value="female" checked>
+						Female
+					</label>
+				</fieldset>
+				<label>
+					Date of birth<br>
+					<input type="date" value="1971-06-28">
+				</label>
+				<label>
+					Email<br>
+					<input type="email" value="elon.musk@spacex.com">
+				</label>
+				<label>
+					Phone number<br>
+					<input type="tel" placeholder="+14001112233">
+				</label>
+				<label>
+					Country<br>
+					<select>
+						<option value="china">China</option>
+						<option value="russia">Russia</option>
+						<option value="usa" selected>USA</option>
+					</select>
+				</label>
+				<label>
+					Tell us about yourself<br>
+					<textarea></textarea>
+				</label>
+				<label>
+					Photo<br>
+					<input type="file">
+				</label>
+				<label>
+					Eyes color <small>(just kidding)</small><br>
+					<input type="color" value="#000000">
+				</label>
+				<label>
+					Password<br>
+					<input type="password" placeholder="******">
+				</label>
+				<label>
+					<input type="checkbox" checked>I pass my soul to SpaceX.
+				</label>
+				<footer>
+					<button type="submit">
+						Submit
+					</button>
+					<button type="reset">
+						Reset
+					</button>
+				</footer>
+			</form>
+		</main>
+		<script src="https://cdn.jsdelivr.net/gh/mvoloskov/image-zoom/dist/image-zoom.min.js"></script>
+		<script>
+			imageZoom()
+		</script>
+	</body>
 </html>
