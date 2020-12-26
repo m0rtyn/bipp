@@ -4,6 +4,8 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Bipp — the canned glitter for your HTML.</title>
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mvoloskov/aniro/aniro.min.css">
 		<link rel="stylesheet" href="bipp.css">
 		<script src="https://cdn.jsdelivr.net/gh/mvoloskov/butter/dist/butter.min.js"></script>
 		<script>
@@ -301,8 +303,14 @@
 			</form>
 		</main>
 		<script src="https://cdn.jsdelivr.net/gh/mvoloskov/image-zoom/dist/image-zoom.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/mvoloskov/aniro/aniro.min.js"></script>
 		<script>
-			imageZoom()
+			imageZoom({
+				cb: () => aniro({
+					selector: 'main > *',
+					line: (document.documentElement.clientHeight / 3) * 2
+				})
+			})
 		</script>
 	</body>
 </html>
