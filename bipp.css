@@ -1,3 +1,4 @@
+/* reset */
 *,
 *::before,
 *::after {
@@ -45,23 +46,23 @@ textarea {
 	display: none;
 }
 
-
+/* base */
 :root {
-	/* brand */
-	--c-brand: rgb(255, 78, 35);
-	--c-brand-hover: rgb(255, 112, 77);
-	--c-brand-transparent: rgba(255, 78, 35, .09);
-	--c-brand-focus: rgba(255, 78, 35, .3);
+	--c-brand: rgb(237, 6, 12);
+	--c-brand-focus: rgba(237, 6, 12, .3);
 	--c-marker: hsl(48, 16%, 44%);
 
-	--link-bg-brand: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3Crect x='0' y='.5' width='1' height='.5' fill='rgba(0, 0, 0, .3)'/%3E%3C/svg%3E");
+	--c-red: #ed060c;
+	--c-green: #075f23;
+	--c-yellow: #f99a08;
+	--c-blue: #07165b;
 
-	--link-bg-brand-focus: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3Crect x='0' y='.5' width='1' height='.5' fill='rgba(255, 78, 35 , .3)'/%3E%3C/svg%3E");
+	--link-bg: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3Crect x='0' y='.5' width='1' height='.5' fill='rgba(0, 0, 0, .3)'/%3E%3C/svg%3E");
 
-	--button-bg-preloader: url("data:image/svg+xml;charset=utf8,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle stroke='white' stroke-width='2' stroke-linecap='round' stroke-dasharray='30,100' cx='10' cy='10' r='8' fill='none'%3E%3CanimateTransform attributeName='transform' type='rotate' dur='1s' repeatCount='indefinite' from='0 10 10' to='360 10 10'/%3E%3C/circle%3E%3C/svg%3E");
+	--link-bg-focus: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3Crect x='0' y='.5' width='1' height='.5' fill='rgba(237, 6, 12, .3)' /%3E%3C/svg%3E");
 
 	/* text, body background */
-	--c-background: rgb(249, 248, 246);
+	--c-background: rgb(242, 241, 237);
 	--c-foreground: rgb(55, 53, 47);
 
 	/* button text, text when background is not --c-background */
@@ -69,16 +70,16 @@ textarea {
 
 	/* alternative background for callouts and other prominent elements */
 	--c-background--accent: rgba(148, 140, 107, .1);
-
 	--c-background--inline-code: rgba(148, 140, 107, .15);
 }
 
+/* base: dark theme */
 @media (prefers-color-scheme: dark) {
 	:root {
 		--c-background: rgb(55, 53, 47);
 		--c-foreground: rgb(249, 248, 246);
-		--link-bg-brand: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3Crect x='0' y='.5' width='1' height='.5' fill='rgba(249, 248, 246, .5)'/%3E%3C/svg%3E");
-		--link-bg-brand-focus: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3Crect x='0' y='.5' width='1' height='.5' fill='rgba(255, 78, 35 , .5)'/%3E%3C/svg%3E");
+		--link-bg: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3Crect x='0' y='.5' width='1' height='.5' fill='rgba(249, 248, 246, .5)'/%3E%3C/svg%3E");
+		--link-bg-focus: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3Crect x='0' y='.5' width='1' height='.5' fill='rgba(255, 78, 35 , .5)'/%3E%3C/svg%3E");
 	}
 }
 
@@ -89,8 +90,10 @@ body {
 	margin: 3rem auto;
 	max-width: 60rem;
 	padding: 0 2rem;
+	font-size: large;
 }
 
+/* typography */
 h1 {
 	font-size: xxx-large;
 	font-weight: 500;
@@ -132,11 +135,31 @@ p code {
 	box-decoration-break: clone;
 }
 
+blockquote {
+	text-align: right;
+	font-size: larger;
+	margin-inline-start: 0;
+	margin-inline-end: 0;
+	max-width: 40rem;
+	margin-left: auto;
+}
+
+cite {
+	display: block;
+	margin-top: 1rem;
+	opacity: .8;
+	font-size: medium;
+}
+
+cite::before {
+	content: '— ';
+}
+
 a {
 	color: var(--c-foreground);
 
 	text-decoration: none;
-	background-image: var(--link-bg-brand);
+	background-image: var(--link-bg);
 	background-repeat: repeat-x;
 	background-position: left bottom;
 
@@ -145,7 +168,6 @@ a {
 
 a[href^="http"]::after {
 	content: ' ↗';
-	font-size: small;
 	user-select: none;
 	pointer-events: none;
 }
@@ -154,36 +176,70 @@ a:hover,
 a:focus {
 	outline: none;
 	color: var(--c-brand);
-	background-image: var(--link-bg-brand-focus);
+	background-image: var(--link-bg-focus);
 	transition-duration: 0s;
 }
 
+/* buttons */
 button {
+	position: relative;
 	display: inline-block;
-	background-color: var(--c-brand);
 	color: var(--c-foreground-contrast);
 	border: none;
 	border-radius: 5px;
 	padding: .5rem 1rem;
 	font-size: large;
 
-	transition:
-		background-color .3s,
-		box-shadow .3s;
+	transition: transform .1s;
 }
 
-button:hover {
+button:nth-child(n) {
+	background-color: var(--c-red);
+}
+
+button:nth-child(2n) {
+	background-color: var(--c-green);
+}
+
+button:nth-child(3n) {
+	background-color: var(--c-yellow);
+}
+
+button:nth-child(4n) {
+	background-color: var(--c-blue);
+}
+
+button::before {
+	display: inline-block;
+	content: '';
+	position: absolute;
+	top: -4px;
+	left: -4px;
+	right: -4px;
+	bottom: -4px;
+	z-index: -1;
+	border-radius: 8px;
+	background-color: inherit;
+	pointer-events: none;
+
+	opacity: .3;
+
+	transform: scale(0);
+	transition: transform 1s;
+}
+
+button:focus {
+	outline: none;
+}
+
+button:focus::before {
+	transform: scale(1);
 	transition-duration: 0s;
-	background-color: var(--c-brand-hover);
 }
 
-button:focus,
 button:active {
 	outline: none;
-	transition-duration: 0s;
-	box-shadow:
-			inset 0 0 0 1px rgba(0, 0, 0, .09),
-			0 0 0 4px var(--c-brand-focus);
+	transform: scale(0.95);
 }
 
 button:disabled {
@@ -195,9 +251,13 @@ button[aria-busy="true"][tabindex="-1"] {
 	color: transparent;
 	user-select: none;
 	pointer-events: none;
-	background-image: var(--button-bg-preloader);
 	background-repeat: no-repeat;
 	background-position: center;
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle stroke='white' stroke-width='2' stroke-linecap='round' stroke-dasharray='30,100' cx='10' cy='10' r='8' fill='none'%3E%3CanimateTransform attributeName='transform' type='rotate' dur='1s' repeatCount='indefinite' from='0 10 10' to='360 10 10'/%3E%3C/circle%3E%3C/svg%3E");
+}
+
+button[type="submit"] {
+	background-color: var(--c-green);
 }
 
 button[type="submit"]::after,
@@ -207,18 +267,17 @@ button:not([type])::after {
 	pointer-events: none;
 }
 
+button[type="reset"] {
+	background-color: var(--c-red);
+}
+
 button[type="reset"]::after {
 	content: '×';
 	user-select: none;
 	pointer-events: none;
 }
 
-input[aria-busy="true"] {
-	cursor: wait;
-	filter: grayscale(100%);
-	opacity: .8;
-}
-
+/* tables */
 table {
 	display: grid;
 	overflow-y: auto;
@@ -286,6 +345,7 @@ td:last-child {
 	padding-right: 2rem;
 }
 
+/* nav menu (a special element) */
 nav ul {
 	padding: 0;
 	list-style-type: none;
@@ -315,6 +375,7 @@ nav a {
 	word-spacing: initial;
 }
 
+/* graphics */
 figure {
 	display: inline-block;
 	margin-inline-start: 0;
@@ -329,26 +390,7 @@ figcaption {
 	opacity: .8;
 }
 
-blockquote {
-	text-align: right;
-	font-size: larger;
-	margin-inline-start: 0;
-	margin-inline-end: 0;
-	max-width: 40rem;
-	margin-left: auto;
-}
-
-cite {
-	display: block;
-	margin-top: 1rem;
-	opacity: .8;
-	font-size: medium;
-}
-
-cite::before {
-	content: '— ';
-}
-
+/* forms, inputs */
 form {
 	display: flex;
 	flex-direction: column;
@@ -366,6 +408,12 @@ label > br ~ * {
 input,
 select {
 	color: var(--c-foreground);
+}
+
+input[aria-busy="true"] {
+	cursor: wait;
+	filter: grayscale(100%);
+	opacity: .8;
 }
 
 input[type="text"],
@@ -386,7 +434,12 @@ textarea {
 	transition: box-shadow .3s;
 }
 
-input[type="text"]:hover,
+/* input[type="radio"],
+input[type="checkbox"] {
+	transition: box-shadow .3s;
+} */
+
+/* input[type="text"]:hover,
 input[type="email"]:hover,
 input[type="password"]:hover,
 input[type="search"]:hover,
@@ -396,7 +449,7 @@ input[type="tel"]:hover,
 select,
 textarea {
 	transition-duration: 0s;
-}
+} */
 
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -405,9 +458,9 @@ input[type="search"]:focus,
 input[type="number"]:focus,
 input[type="date"]:focus,
 input[type="tel"]:focus,
+input[type="color"]:focus,
 select:focus,
 textarea:focus,
-
 input[type="text"]:active,
 input[type="email"]:active,
 input[type="password"]:active,
@@ -415,13 +468,14 @@ input[type="search"]:active,
 input[type="number"]:active,
 input[type="date"]:active,
 input[type="tel"]:active,
+input[type="color"]:active,
 select:active,
 textarea:active {
 	outline: none;
 	transition-duration: 0s;
 	box-shadow:
-			inset 0 0 0 1px rgba(0, 0, 0, .09),
-			0 0 0 4px var(--c-brand-focus);
+		inset 0 0 0 1px rgba(0, 0, 0, .09),
+		0 0 0 4px var(--c-brand-focus);
 }
 
 input:disabled,
@@ -484,15 +538,6 @@ input[type="color"] {
 	transition: box-shadow .3s;
 	min-height: 2rem;
 	min-width: 5rem;
-}
-
-input[type="color"]:focus,
-input[type="color"]:active {
-	outline: none;
-	transition-duration: 0s;
-	box-shadow:
-			inset 0 0 0 1px rgba(0, 0, 0, .09),
-			0 0 0 4px var(--c-brand-focus);
 }
 
 input[type="file"] {
