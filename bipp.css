@@ -1,10 +1,11 @@
-/* reset */
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
 	line-height: 1.5;
 	backface-visibility: hidden;
+	text-decoration: inherit;
+	vertical-align: inherit;
 }
 
 :root {
@@ -27,6 +28,16 @@
 		"Segoe UI Symbol";
 }
 
+code,
+pre {
+	tab-size: 4;
+	font-family: monospace;
+}
+
+body {
+	margin: 0;
+}
+
 img {
 	display: block;
 	height: auto;
@@ -43,8 +54,30 @@ textarea {
 }
 
 [hidden] {
-	display: none;
+	display: none !important;
 }
+
+input {
+	font-family: inherit;
+}
+
+textarea {
+	resize: vertical;
+}
+
+[aria-busy="true"] {
+	cursor: progress;
+}
+
+[disabled],
+[aria-disabled="true"] {
+	cursor: default;
+}
+
+[aria-controls] {
+	cursor: pointer;
+}
+
 
 /* base */
 :root {
@@ -90,7 +123,6 @@ body {
 	margin: 3rem auto;
 	max-width: 60rem;
 	padding: 0 2rem;
-	font-size: large;
 }
 
 /* typography */
@@ -108,7 +140,7 @@ li::marker {
 	color: var(--c-marker);
 }
 
-li + li {
+li+li {
 	margin-top: 1rem;
 }
 
@@ -237,7 +269,7 @@ button:focus::before {
 	transition-duration: 0s;
 }
 
-button:active {
+button:not([disabled]):not([aria-disabled="true"]):active {
 	outline: none;
 	transform: scale(0.95);
 }
@@ -250,7 +282,6 @@ button:disabled {
 button[aria-busy="true"][tabindex="-1"] {
 	color: transparent;
 	user-select: none;
-	pointer-events: none;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle stroke='white' stroke-width='2' stroke-linecap='round' stroke-dasharray='30,100' cx='10' cy='10' r='8' fill='none'%3E%3CanimateTransform attributeName='transform' type='rotate' dur='1s' repeatCount='indefinite' from='0 10 10' to='360 10 10'/%3E%3C/circle%3E%3C/svg%3E");
@@ -325,8 +356,8 @@ td {
 	box-sizing: initial;
 }
 
-td + td,
-th + th {
+td+td,
+th+th {
 	padding-left: 1rem;
 }
 
@@ -397,11 +428,11 @@ form {
 	align-items: flex-start;
 }
 
-form > * + * {
+form>*+* {
 	margin-top: 1rem;
 }
 
-label > br ~ * {
+label>br~* {
 	margin-top: .25rem;
 }
 
@@ -500,7 +531,7 @@ fieldset {
 	position: relative;
 }
 
-fieldset > legend {
+fieldset>legend {
 	margin-bottom: 1rem;
 	top: -.25rem;
 	left: 0;
@@ -512,13 +543,13 @@ input[type="checkbox"]:first-of-type {
 	margin-left: 0;
 }
 
-form > footer {
+form>footer {
 	display: flex;
 	margin: -.5rem;
 	margin-top: .5rem;
 }
 
-form > footer > * {
+form>footer>* {
 	margin: .5rem;
 }
 
