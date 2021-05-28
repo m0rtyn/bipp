@@ -204,11 +204,18 @@ a[href^="http"]::after {
 	pointer-events: none;
 }
 
-a:hover,
-a:focus {
+a:hover {
 	outline: none;
 	color: var(--c-brand);
 	background-image: var(--link-bg-focus);
+	transition-duration: 0s;
+}
+
+a:focus {
+	outline: 2px solid var(--c-brand-focus);
+	outline-offset: 2px;
+	color: var(--c-brand);
+	background-image: none;
 	transition-duration: 0s;
 }
 
@@ -260,16 +267,16 @@ button::before {
 	transition: transform 1s;
 }
 
-button:focus {
+button:not([aria-busy="true"]):focus {
 	outline: none;
 }
 
-button:focus::before {
+button:not([aria-busy="true"]):focus::before {
 	transform: scale(1);
 	transition-duration: 0s;
 }
 
-button:not([disabled]):not([aria-disabled="true"]):active {
+button:not([disabled]):not([aria-disabled="true"]):not([aria-busy="true"]):active {
 	outline: none;
 	transform: scale(0.95);
 }
@@ -293,9 +300,21 @@ button[type="submit"] {
 
 button[type="submit"]::after,
 button:not([type])::after {
+	position: relative;
 	content: '↑';
 	user-select: none;
 	pointer-events: none;
+	transition: top .3s;
+	top: 0;
+}
+
+button[type="submit"]:hover::after,
+button:not([type]):hover::after,
+button[type="submit"]:focus::after,
+button:not([type]):focus::after,
+button[type="submit"]:active::after,
+button:not([type]):active::after {
+	top: -3px;
 }
 
 button[type="reset"] {
@@ -303,6 +322,7 @@ button[type="reset"] {
 }
 
 button[type="reset"]::after {
+	display: inline-block;
 	content: '×';
 	user-select: none;
 	pointer-events: none;
@@ -344,7 +364,7 @@ th {
 	min-width: 8rem;
 	padding: .5rem 0;
 	box-sizing: initial;
-	font-weight: 500;
+	font-weight: 600;
 	flex-basis: 100%;
 }
 
