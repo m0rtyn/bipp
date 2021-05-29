@@ -153,8 +153,8 @@
 					</tr>
 				</tbody>
 			</table>
-			<table>
-				<caption>Table of 5 columns</caption>
+			<table class="sticky">
+				<caption>Table of 5 columns, sticky <code>&lt;thead&gt;</code></caption>
 				<thead>
 					<tr>
 						<th>Table Heading 1</th>
@@ -195,14 +195,14 @@
 					</tr>
 				</tbody>
 			</table>
-			<h2>Code</h2>
-			<code>function checkParent (src, dest) {
+			<h2>Blocks of code with <code>&lt;pre&gt;</code> tag</h2>
+			<pre>function checkParent (src, dest) {
 	while (src != null) {
 		if (src.tagName == dest) return src
 		src = src.parentElement
 	}
 	return null
-}</code>
+}</pre>
 			<p>
 				This is a paragraph with <code>inline code</code>. Some more text and a really long inline code: <code>This is a really long text link. A paragraph (from the Greek paragraphos, “to write beside” or “written beside”) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose</code>.
 			</p>
@@ -302,6 +302,7 @@
 				</footer>
 			</form>
 		</main>
+		<script src="bipp.js"></script>
 		<script src="https://cdn.jsdelivr.net/gh/mvoloskov/fast-image-zoom/dist/fast-image-zoom.js"></script>
 		<script src="https://cdn.jsdelivr.net/gh/mvoloskov/aniro/aniro.min.js"></script>
 		<script>

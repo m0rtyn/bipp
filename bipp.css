@@ -104,6 +104,7 @@ textarea {
 	/* alternative background for callouts and other prominent elements */
 	--c-background--accent: rgba(148, 140, 107, .1);
 	--c-background--inline-code: rgba(148, 140, 107, .15);
+	--c-background--accent-opaque: #e8e7e0;
 }
 
 /* base: dark theme */
@@ -113,6 +114,8 @@ textarea {
 		--c-foreground: rgb(249, 248, 246);
 		--link-bg: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3Crect x='0' y='.5' width='1' height='.5' fill='rgba(249, 248, 246, .5)'/%3E%3C/svg%3E");
 		--link-bg-focus: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3Crect x='0' y='.5' width='1' height='.5' fill='rgba(255, 78, 35 , .5)'/%3E%3C/svg%3E");
+
+		--c-background--accent-opaque: #403e35;
 	}
 }
 
@@ -148,7 +151,7 @@ p {
 	margin-bottom: 1.5rem;
 }
 
-code {
+pre {
 	display: block;
 	background-color: var(--c-background--accent);
 	padding: 2rem;
@@ -158,7 +161,7 @@ code {
 	tab-size: 3;
 }
 
-p code {
+code {
 	display: inline;
 	margin: 0;
 	background-color: var(--c-background--inline-code);
@@ -330,33 +333,70 @@ button[type="reset"]::after {
 
 /* tables */
 table {
-	display: grid;
-	overflow-y: auto;
-	-webkit-overflow-scrolling: touch;
 	margin: 2rem -2rem;
 	border-collapse: collapse;
+}
+
+table:not(.sticky) {
+	display: grid;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+table.sticky {
+	opacity: 1;
+	transition: opacity 1ms;
+}
+
+table.sticky:hover {
+	opacity: 0.99;
 }
 
 table caption {
 	text-align: left;
 	font-weight: 600;
 	margin-bottom: 1rem;
-	width: max-content;
-	position: sticky;
-	left: 2rem;
+	margin-left: 2rem;
+	margin-right: 2rem;
 }
 
 thead {
 	display: block;
 }
 
+table.sticky thead {
+	position: sticky;
+	top: 0;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	width: 100vw;
+	max-width: 60rem;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+table.sticky thead::-webkit-scrollbar {
+	display: none;
+}
+
 tbody {
 	display: block;
+}
+
+table.sticky tbody {
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	width: 100vw;
+	max-width: 60rem;
 }
 
 tr {
 	display: flex;
 	align-items: baseline;
+}
+
+table.sticky tr {
+	min-width: max-content;
 }
 
 th {
@@ -381,7 +421,10 @@ th+th {
 	padding-left: 1rem;
 }
 
-thead tr:nth-of-type(2n + 1),
+table.sticky thead tr {
+	background-color: var(--c-background--accent-opaque);
+}
+
 tbody tr:nth-of-type(2n) {
 	background-color: var(--c-background--accent);
 }
